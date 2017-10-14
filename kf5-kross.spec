@@ -1,15 +1,15 @@
-%define		kdeframever	5.19
+%define		kdeframever	5.39
 %define		qtver		5.3.2
 %define		kfname		kross
 #
 Summary:	Embedding of scripting into applications
 Name:		kf5-%{kfname}
-Version:	5.19.0
+Version:	5.39.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/portingAids/%{kfname}-%{version}.tar.xz
-# Source0-md5:	3ed3ca232a3b6a2859a37a7b0017ded9
+# Source0-md5:	96fd68a23632ae42a9fb88b4230c9293
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel >= 5.2.0)
