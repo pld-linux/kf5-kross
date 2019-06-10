@@ -1,15 +1,15 @@
-%define		kdeframever	5.56
+%define		kdeframever	5.59
 %define		qtver		5.9.0
 %define		kfname		kross
 #
 Summary:	Embedding of scripting into applications
 Name:		kf5-%{kfname}
-Version:	5.56.0
+Version:	5.59.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/portingAids/%{kfname}-%{version}.tar.xz
-# Source0-md5:	7a3854f1c5afdbf21d0aa691d5b4ed27
+# Source0-md5:	567e73202c15287f26c3b9e7ac419735
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel >= 5.2.0)
@@ -110,6 +110,15 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{qt5dir}/plugins/krossqts.so
 %attr(755,root,root) %{qt5dir}/plugins/script/krossqtsplugin.so
 %{_mandir}/man1/kf5kross.1*
+%lang(ca) %{_mandir}/ca/man1/kf5kross.1*
+%lang(de) %{_mandir}/de/man1/kf5kross.1*
+%lang(es) %{_mandir}/es/man1/kf5kross.1*
+%lang(it) %{_mandir}/it/man1/kf5kross.1*
+%lang(nl) %{_mandir}/nl/man1/kf5kross.1*
+%lang(pt) %{_mandir}/pt/man1/kf5kross.1*
+%lang(pt_BR) %{_mandir}/pt_BR/man1/kf5kross.1*
+%lang(sv) %{_mandir}/sv/man1/kf5kross.1*
+%lang(uk) %{_mandir}/uk/man1/kf5kross.1*
 
 %files devel
 %defattr(644,root,root,755)
