@@ -5,7 +5,7 @@
 Summary:	Embedding of scripting into applications
 Name:		kf5-%{kfname}
 Version:	5.59.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/portingAids/%{kfname}-%{version}.tar.xz
