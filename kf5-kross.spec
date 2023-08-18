@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.108
+%define		kdeframever	5.109
 %define		qtver		5.15.2
 %define		kfname		kross
 #
 Summary:	Embedding of scripting into applications
 Name:		kf5-%{kfname}
-Version:	5.108.0
-Release:	2
+Version:	5.109.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/portingAids/%{kfname}-%{version}.tar.xz
-# Source0-md5:	c8eec5f4fe5e7f99ec334eff1a80abb4
+# Source0-md5:	e647b806ba546ea010b304f707a9d696
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel >= 5.2.0
@@ -23,7 +23,7 @@ BuildRequires:	Qt5Test-devel
 BuildRequires:	Qt5UiTools-devel
 BuildRequires:	Qt5Widgets-devel
 BuildRequires:	Qt5Xml-devel
-BuildRequires:	cmake >= 2.8.12
+BuildRequires:	cmake >= 3.16
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-attica-devel >= %{version}
 BuildRequires:	kf5-extra-cmake-modules >= %{version}
@@ -81,16 +81,15 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 %setup -q -n %{kfname}-%{version}
 
 %build
-install -d build
-cd build
-%cmake -G Ninja \
+%cmake -B build \
+	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	../
-%ninja_build
+	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+
+%ninja_build -C build
 
 %if %{with tests}
-ctest
+%ninja_build -C build test
 %endif
 
 
