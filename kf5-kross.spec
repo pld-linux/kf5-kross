@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.114
+%define		kdeframever	5.115
 %define		qtver		5.15.2
 %define		kfname		kross
 #
 Summary:	Embedding of scripting into applications
 Name:		kf5-%{kfname}
-Version:	5.114.0
+Version:	5.115.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/portingAids/%{kfname}-%{version}.tar.xz
-# Source0-md5:	d03e8b2624bba934dbe2766e4e16fdd2
+# Source0-md5:	95fef271cb5197f9a0f009e41e2072c9
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel >= 5.2.0
